@@ -1,3 +1,6 @@
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,11 +86,28 @@
 }
 
 .font-heading {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 .font-sans {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Better typography */
+.text-balance {
+  text-wrap: balance;
+}
+
+.title-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-900;
+  background-size: 200% 100%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Tech grid background inspired by Clerk.com */

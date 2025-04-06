@@ -8,6 +8,7 @@ import BuiltInFeatures from "@/components/BuiltInFeatures";
 import AICapabilities from "@/components/AICapabilities";
 import TechInfrastructure from "@/components/TechInfrastructure";
 import CompetitorComparison from "@/components/CompetitorComparison";
+import DemoSection from "@/components/DemoSection";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <TechInfrastructure />
         <PowerfulFeatures />
         <HowItWorks />
+        <DemoSection />
         <BuiltInFeatures />
         <CompetitorComparison />
         <Pricing />

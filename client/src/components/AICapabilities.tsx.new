@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Zap, BrainCircuit, Paintbrush, Image, FileCode, LayoutGrid, ArrowRight, Clock, Check, Sparkles, MessageSquareText, PenTool, Palette, Cpu } from "lucide-react";
 import ThreeScene from "./ThreeScene";
@@ -561,7 +561,7 @@ export default function AICapabilities() {
                 >
                   <div className="p-4 flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${activeIndex === index ? 'bg-primary/10' : 'bg-gray-100'}`}>
-                      {React.cloneElement(capability.icon as React.ReactElement, { 
+                      {React.cloneElement(capability.icon, { 
                         className: `h-6 w-6 ${activeIndex === index ? 'text-primary' : 'text-gray-500'}` 
                       })}
                     </div>
