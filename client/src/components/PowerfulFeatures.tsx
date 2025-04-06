@@ -1,12 +1,11 @@
-import { motion } from "framer-motion";
+import { Globe, Server, Search, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Globe, Server, Search, Shield, MousePointerClick } from "lucide-react";
 
 export default function PowerfulFeatures() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-4">Make website building effortless</h2>
             <p className="text-gray-600 mb-10">
@@ -79,8 +78,8 @@ export default function PowerfulFeatures() {
           
           <div className="relative rounded-lg overflow-hidden shadow-lg border border-gray-200">
             <img 
-              src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-              alt="WordPress Dashboard" 
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+              alt="Person working on website" 
               className="w-full h-full object-cover"
             />
           </div>

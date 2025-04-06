@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorks from "@/components/HowItWorks";
 import PowerfulFeatures from "@/components/PowerfulFeatures";
 import Pricing from "@/components/Pricing";
@@ -18,11 +19,11 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <AICapabilities />
-        <Features />
-        <TechInfrastructure />
+        <FeaturesSection />
         <PowerfulFeatures />
         <HowItWorks />
+        <TechInfrastructure />
+        <AICapabilities />
         <DemoSection />
         <BuiltInFeatures />
         <CompetitorComparison />
