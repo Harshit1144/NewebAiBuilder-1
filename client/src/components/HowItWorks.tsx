@@ -29,96 +29,102 @@ export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      color: "primary",
       title: "Describe your website",
       description: "Tell our AI what kind of website you need in simple language - no technical jargon required.",
-      icon: <MousePointerClick className="h-6 w-6 text-white" />,
-      visual: <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg">
-        <div className="absolute inset-0 opacity-10">
-          <ThreeScene type="ai-grid" className="h-full" />
-        </div>
-        <div className="relative p-6 h-full flex flex-col justify-between">
-          <div className="bg-black/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700">
-            <div className="flex items-center mb-2">
-              <Sparkles className="h-4 w-4 text-primary mr-2" />
-              <p className="text-white text-sm font-medium">AI Website Generator</p>
+      icon: <MousePointerClick className="h-5 w-5 text-primary" />,
+      visual: <div className="h-full w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg flex items-center justify-center">
+        <div className="relative w-full max-w-md p-8">
+          <div className="p-4 rounded-lg overflow-hidden border border-slate-700 bg-black/40 backdrop-blur-sm">
+            <div className="flex items-center mb-4">
+              <div className="bg-primary/80 text-white text-xs font-medium px-2 py-1 rounded mr-2 inline-flex items-center">
+                <Sparkles className="h-3 w-3 mr-1" />
+                AI Website Generator
+              </div>
             </div>
-            <p className="text-white text-base">
+            <div className="text-white text-sm mb-3">
               "I need a professional website for my bakery business with online ordering and a gallery of my products."
-            </p>
+            </div>
+            <div className="h-1.5 w-full max-w-[80%] bg-primary/30 rounded-full animate-pulse"></div>
           </div>
-          <motion.div 
-            animate={{ opacity: [0.5, 1], y: [10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
-            className="self-end"
-          >
-            <Button className="bg-primary hover:bg-primary/90">
+          <div className="mt-6 flex justify-end">
+            <Button 
+              size="sm"
+              className="bg-primary hover:bg-primary/90 text-white"
+            >
               Generate Website
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
             </Button>
-          </motion.div>
+          </div>
         </div>
       </div>
     },
     {
       number: 2,
-      color: "violet-500",
       title: "Wait just 2 minutes",
       description: "Our advanced AI builds your entire WordPress website in less than 2 minutes with all the features you need.",
-      icon: <Clock className="h-6 w-6 text-white" />,
-      visual: <div className="bg-gradient-to-br from-violet-500/10 to-indigo-500/10 rounded-lg h-full w-full overflow-hidden p-6 flex flex-col items-center justify-center">
-        <div className="w-full max-w-md">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-1 bg-gradient-to-r from-violet-500 to-indigo-600"></div>
-            <div className="p-6">
-              <h4 className="text-lg font-semibold text-center mb-4">Creating Your Website</h4>
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Generating content</span>
-                    <span className="text-sm font-medium text-green-600">100%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{ width: "100%" }}></div>
-                  </div>
+      icon: <Clock className="h-5 w-5 text-primary" />,
+      visual: <div className="h-full w-full overflow-hidden bg-white flex items-center justify-center">
+        <div className="w-full max-w-md p-6">
+          <div className="space-y-6">
+            <div className="text-center mb-8">
+              <Clock className="h-10 w-10 text-primary mx-auto mb-3" />
+              <h3 className="text-xl font-semibold">Creating Your Website</h3>
+              <p className="text-sm text-gray-500">Just 2 minutes from start to finish</p>
+            </div>
+            <div className="space-y-5">
+              <div>
+                <div className="flex justify-between mb-1.5 text-sm">
+                  <span className="font-medium">Analyzing requirements</span>
+                  <span className="text-green-600 font-medium">100%</span>
                 </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Building structure</span>
-                    <span className="text-sm font-medium text-green-600">100%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{ width: "100%" }}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Optimizing for speed</span>
-                    <motion.span 
-                      animate={{ opacity: [1, 0.5] }}
-                      transition={{ repeat: Infinity, duration: 1, repeatType: "reverse" }}
-                      className="text-sm font-medium text-violet-600"
-                    >
-                      87%
-                    </motion.span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <motion.div 
-                      animate={{ width: ["70%", "87%"] }}
-                      transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
-                      className="bg-violet-500 h-2 rounded-full"
-                    ></motion.div>
-                  </div>
-                </div>
-                <div className="text-center text-sm text-gray-500">
-                  <motion.p
-                    animate={{ opacity: [1, 0.7] }}
-                    transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
-                  >
-                    Time remaining: <span className="font-medium">38 seconds</span>
-                  </motion.p>
+                <div className="w-full bg-gray-100 rounded-full h-2">
+                  <div className="bg-green-500 h-2 rounded-full w-full"></div>
                 </div>
               </div>
+              <div>
+                <div className="flex justify-between mb-1.5 text-sm">
+                  <span className="font-medium">Creating design</span>
+                  <span className="text-green-600 font-medium">100%</span>
+                </div>
+                <div className="w-full bg-gray-100 rounded-full h-2">
+                  <div className="bg-green-500 h-2 rounded-full w-full"></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between mb-1.5 text-sm">
+                  <span className="font-medium">Generating content</span>
+                  <span className="text-green-600 font-medium">92%</span>
+                </div>
+                <div className="w-full bg-gray-100 rounded-full h-2">
+                  <motion.div 
+                    animate={{ width: ["85%", "92%"] }}
+                    transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+                    className="bg-primary h-2 rounded-full"
+                  ></motion.div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between mb-1.5 text-sm">
+                  <span className="font-medium">Building website</span>
+                  <span className="text-primary font-medium">68%</span>
+                </div>
+                <div className="w-full bg-gray-100 rounded-full h-2">
+                  <motion.div 
+                    animate={{ width: ["50%", "68%"] }}
+                    transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
+                    className="bg-primary h-2 rounded-full"
+                  ></motion.div>
+                </div>
+              </div>
+            </div>
+            <div className="text-center">
+              <motion.p
+                animate={{ opacity: [1, 0.7] }}
+                transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+                className="text-sm text-gray-500"
+              >
+                Estimated time remaining: <span className="font-medium">38 seconds</span>
+              </motion.p>
             </div>
           </div>
         </div>
@@ -126,118 +132,105 @@ export default function HowItWorks() {
     },
     {
       number: 3,
-      color: "emerald-500",
       title: "Launch with your free domain",
       description: "Publish your website with your free domain name instantly. No additional setup or technical knowledge needed.",
-      icon: <Globe className="h-6 w-6 text-white" />,
-      visual: <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-lg h-full w-full overflow-hidden flex items-center justify-center">
-        <div className="w-full max-w-md p-6">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <div className="mb-4 flex justify-center">
-              <div className="rounded-full bg-green-100 p-3">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
+      icon: <Globe className="h-5 w-5 text-primary" />,
+      visual: <div className="h-full w-full overflow-hidden bg-white flex items-center justify-center">
+        <div className="w-full max-w-md p-6 text-center">
+          <div className="mb-8">
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+              <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
             </div>
-            <h3 className="text-xl font-bold mb-2">Congratulations!</h3>
-            <p className="text-gray-600 mb-4">Your website is ready to launch</p>
-            
-            <div className="bg-gray-100 rounded-lg p-3 mb-4">
-              <p className="text-sm font-medium text-gray-900">Your free domain is ready:</p>
-              <div className="flex items-center justify-center space-x-2">
-                <Globe className="h-4 w-4 text-primary" />
-                <code className="text-emerald-600 font-semibold">yourbusiness.neweb.ai</code>
-              </div>
-            </div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Button className="bg-emerald-600 hover:bg-emerald-700 w-full">
-                Launch Your Website
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </motion.div>
+            <h3 className="text-xl font-bold mb-2">Your website is ready!</h3>
+            <p className="text-gray-600">Publish it instantly with your free domain</p>
           </div>
+          
+          <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 mb-6">
+            <div className="flex items-center justify-center mb-1">
+              <Globe className="h-4 w-4 text-blue-500 mr-2" />
+              <h4 className="text-sm font-medium text-blue-800">Your free domain</h4>
+            </div>
+            <div className="bg-white border border-blue-200 rounded px-3 py-2 text-blue-700 font-mono text-center">
+              yoursite.neweb.ai
+            </div>
+            <p className="text-xs text-blue-600 mt-2">
+              No additional setup or technical knowledge needed
+            </p>
+          </div>
+          
+          <Button 
+            className="bg-green-600 hover:bg-green-700"
+            size="lg"
+          >
+            Launch Your Website
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-gray-50">
+    <section id="how-it-works" className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center max-w-3xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h6 className="text-primary font-semibold text-sm uppercase mb-2">How it works</h6>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-primary font-medium text-sm uppercase mb-2">HOW IT WORKS</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">From idea to website in 2 minutes</h2>
           <p className="text-gray-600 text-lg">
             No coding, no design skills, no waiting. Just describe what you need and get a complete website.
           </p>
-        </motion.div>
+        </div>
         
-        <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-8 max-w-6xl mx-auto">
           {/* Steps navigation */}
-          <div className="lg:w-1/3">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-              <div className="relative mb-8">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
-                <motion.div 
-                  className="absolute left-0 top-0 w-1 bg-primary rounded-full"
-                  animate={controls}
-                  style={{ height: '100%' }}
-                ></motion.div>
-                
-                {steps.map((step) => (
-                  <motion.div 
-                    key={step.number}
-                    className={`relative pl-8 py-4 cursor-pointer transition-all duration-200 ${activeStep === step.number ? 'opacity-100' : 'opacity-60'}`}
-                    onClick={() => setActiveStep(step.number)}
-                    whileHover={{ opacity: 0.8 }}
-                  >
-                    <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full flex items-center justify-center ${activeStep === step.number ? 'bg-primary scale-125' : 'bg-gray-200'}`}>
-                      <div className={`absolute w-2 h-2 rounded-full bg-white ${activeStep === step.number ? 'scale-100' : 'scale-0'} transition-transform duration-200`}></div>
+          <div className="md:col-span-5">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+              {steps.map((step, index) => (
+                <div 
+                  key={step.number}
+                  className={`border-b border-gray-100 last:border-b-0 cursor-pointer transition-colors ${
+                    activeStep === step.number ? 'bg-blue-50' : 'hover:bg-gray-50'
+                  }`}
+                  onClick={() => setActiveStep(step.number)}
+                >
+                  <div className="p-4 flex items-start">
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mr-4 ${activeStep === step.number ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
+                      <span className="text-base font-semibold">{step.number}</span>
                     </div>
-                    <h3 className={`text-lg font-semibold ${activeStep === step.number ? 'text-primary' : 'text-gray-700'}`}>
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-600 mt-1 text-sm">
-                      {step.description}
-                    </p>
-                  </motion.div>
-                ))}
+                    <div className="flex-1">
+                      <h3 className={`font-semibold ${activeStep === step.number ? 'text-primary' : 'text-gray-800'}`}>
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {step.description}
+                      </p>
+                    </div>
+                    {activeStep === step.number && (
+                      <div className="w-1.5 h-10 bg-primary rounded-l-full"></div>
+                    )}
+                  </div>
+                </div>
+              ))}
+              <div className="p-4">
+                <Button
+                  onClick={() => setActiveStep((prev) => (prev % 3) + 1)}
+                  variant="outline"
+                  className="w-full"
+                >
+                  See next step
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
-              
-              <Button
-                onClick={() => setActiveStep((prev) => (prev % 3) + 1)}
-                variant="outline"
-                className="w-full"
-              >
-                See next step
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
           
           {/* Visual display */}
-          <div className="lg:w-2/3 h-[500px]">
-            <motion.div 
-              key={activeStep}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4 }}
-              className="h-full rounded-xl shadow-md border border-gray-100 overflow-hidden"
-            >
+          <div className="md:col-span-7">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden h-[400px]">
               {steps[activeStep - 1].visual}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
