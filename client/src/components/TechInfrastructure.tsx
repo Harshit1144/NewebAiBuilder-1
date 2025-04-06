@@ -395,13 +395,13 @@ export default function TechInfrastructure() {
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-2">Built for WordPress Success</h3>
-                    <p className="text-gray-500 mb-8">Our platform is optimized specifically for WordPress</p>
+                  <div className="p-4 md:p-6 lg:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">Built for WordPress Success</h3>
+                    <p className="text-gray-500 mb-4 md:mb-8 text-sm md:text-base">Our platform is optimized specifically for WordPress</p>
                   
-                    <div className="grid grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                       <div>
-                        <div className="space-y-6">
+                        <div className="space-y-4 md:space-y-6">
                           <div className="flex items-start">
                             <div className="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
                               <Check className="h-5 w-5 text-green-600" />

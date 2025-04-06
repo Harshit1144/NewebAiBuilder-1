@@ -119,6 +119,171 @@
   animation: fadeIn 0.3s ease-in-out forwards;
 }
 
+/* PowerfulFeatures Section Animations */
+@keyframes slow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes slow-pulse-delay {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+@keyframes slow-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-random {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -10px); }
+  50% { transform: translate(-5px, -5px); }
+  75% { transform: translate(-10px, 10px); }
+}
+
+@keyframes float-random-delay {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 10px); }
+  50% { transform: translate(10px, 5px); }
+  75% { transform: translate(5px, -10px); }
+}
+
+@keyframes text-shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes width-expand {
+  0% { width: 0; }
+  100% { width: 20%; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-in-delayed {
+  0%, 30% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+@keyframes progress-slide {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes progress-slide-delay-1 {
+  0%, 33% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes progress-slide-delay-2 {
+  0%, 66% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 8s infinite ease-in-out;
+}
+
+.animate-slow-pulse-delay {
+  animation: slow-pulse-delay 8s infinite ease-in-out;
+  animation-delay: 1s;
+}
+
+.animate-slow-spin {
+  animation: slow-spin 25s infinite linear;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s infinite ease-in-out;
+}
+
+.animate-float-medium {
+  animation: float-medium 4s infinite ease-in-out;
+}
+
+.animate-float-random {
+  animation: float-random 10s infinite ease-in-out;
+}
+
+.animate-float-random-delay {
+  animation: float-random-delay 12s infinite ease-in-out;
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 8s infinite linear;
+}
+
+.animate-width-expand {
+  animation: width-expand 1.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 1s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1.5s infinite ease-in-out;
+}
+
+.animate-progress-slide {
+  animation: progress-slide 2s infinite;
+}
+
+.animate-progress-slide-delay-1 {
+  animation: progress-slide-delay-1 2s infinite;
+}
+
+.animate-progress-slide-delay-2 {
+  animation: progress-slide-delay-2 2s infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
 /* Tech grid background inspired by Clerk.com */
 .tech-grid-bg {
   position: relative;
