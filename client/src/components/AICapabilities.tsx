@@ -22,63 +22,71 @@ export default function AICapabilities() {
   // Data for interactive preview
   const capabilities = [
     {
-      icon: <BrainCircuit className="h-6 w-6 text-primary" />,
-      title: "AI Content Creation",
-      description: "Our AI analyzes your business to generate perfect copy, layouts, and visuals tailored to your industry.",
+      icon: <Palette className="h-6 w-6 text-primary" />,
+      title: "Smart Design System",
+      description: "Our technology automatically creates beautiful layouts and visuals perfectly tailored to your brand and industry.",
       steps: [
-        "Understanding your business needs",
-        "Analyzing industry best practices",
-        "Creating optimized website content",
-        "Generating SEO-friendly text"
+        "Analyzing your brand identity",
+        "Creating custom color palette",
+        "Designing responsive layouts",
+        "Optimizing visual hierarchy"
       ],
       preview: (
         <div className="h-full flex flex-col">
           <div className="flex-1 p-6 space-y-4 overflow-auto">
             <div className="flex items-start gap-4">
-              <div className="bg-blue-100 rounded-full p-2 mt-1">
-                <BrainCircuit className="h-5 w-5 text-blue-600" />
+              <div className="bg-purple-100 rounded-full p-2 mt-1">
+                <Palette className="h-5 w-5 text-purple-600" />
               </div>
               <div className="flex-1">
-                <div className="bg-blue-50 rounded-lg p-4 text-sm">
-                  <p className="text-blue-800">What type of business do you have?</p>
+                <div className="bg-purple-50 rounded-lg p-4 text-sm">
+                  <p className="text-purple-800">What kind of design style do you prefer?</p>
                 </div>
               </div>
             </div>
             <div className="flex items-start gap-4 justify-end">
               <div className="flex-1">
                 <div className="bg-gray-100 rounded-lg p-4 text-sm">
-                  <p className="text-gray-800">I have a local bakery specializing in artisanal bread and pastries.</p>
+                  <p className="text-gray-800">I'd like a clean, modern design with a focus on imagery for my photography portfolio.</p>
                 </div>
               </div>
               <div className="bg-gray-200 rounded-full p-2 mt-1">
-                <div className="h-5 w-5 text-gray-600">👨‍🍳</div>
+                <div className="h-5 w-5 text-gray-600">📸</div>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="bg-blue-100 rounded-full p-2 mt-1">
-                <BrainCircuit className="h-5 w-5 text-blue-600" />
+              <div className="bg-purple-100 rounded-full p-2 mt-1">
+                <Palette className="h-5 w-5 text-purple-600" />
               </div>
               <div className="flex-1 space-y-3">
-                <div className="bg-blue-50 rounded-lg p-4 text-sm">
-                  <p className="text-blue-800">Perfect! Based on your bakery business, I'll generate content that:</p>
-                  <ul className="mt-2 space-y-1">
-                    <li className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span>Highlights your artisanal approach</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span>Features your special bread and pastries</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span>Includes online ordering capabilities</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span>Emphasizes local ingredients and techniques</span>
-                    </li>
-                  </ul>
+                <div className="bg-purple-50 rounded-lg p-4 text-sm">
+                  <p className="text-purple-800">Perfect! I'll create a design system focused on:</p>
+                  <div className="mt-3 space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="flex gap-1">
+                        <div className="w-6 h-6 rounded-full bg-gray-900"></div>
+                        <div className="w-6 h-6 rounded-full bg-gray-700"></div>
+                        <div className="w-6 h-6 rounded-full bg-gray-500"></div>
+                      </div>
+                      <span className="text-xs text-purple-800">Primary color palette</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex gap-1">
+                        <div className="w-6 h-6 rounded-full bg-indigo-500"></div>
+                        <div className="w-6 h-6 rounded-full bg-indigo-400"></div>
+                        <div className="w-6 h-6 rounded-full bg-indigo-300"></div>
+                      </div>
+                      <span className="text-xs text-purple-800">Accent color palette</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="h-10 bg-white rounded border border-gray-200 flex items-center justify-center">
+                        <span className="text-xs">Minimal Layout</span>
+                      </div>
+                      <div className="h-10 bg-gray-100 rounded border border-gray-200 flex items-center justify-center">
+                        <span className="text-xs">Full-width Images</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <motion.div 
                   initial={{ opacity: 0 }}
@@ -87,9 +95,9 @@ export default function AICapabilities() {
                 >
                   <div className="flex items-center gap-2 text-green-800 font-medium mb-1">
                     <Check className="h-4 w-4 text-green-600" />
-                    <span>Content generation complete!</span>
+                    <span>Design system generated!</span>
                   </div>
-                  <p className="text-green-700 text-xs">Created 5 pages with industry-specific content optimized for local bakery businesses.</p>
+                  <p className="text-green-700 text-xs">Created a photography-focused portfolio design with image-forward layouts and clean typography.</p>
                 </motion.div>
               </div>
             </div>
@@ -537,7 +545,9 @@ export default function AICapabilities() {
               AI-POWERED TECHNOLOGY
             </span>
           </h6>
-          <h2 className="text-3xl font-bold mb-4">Advanced AI creates beautiful websites</h2>
+          <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+            Technology that creates beautiful websites
+          </h2>
           <p className="text-gray-600 text-lg">
             Our cutting-edge AI technology transforms your ideas into stunning, functional websites
           </p>
