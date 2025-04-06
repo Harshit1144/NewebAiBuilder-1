@@ -114,28 +114,115 @@ export default function FeaturesSection() {
             </div>
           </div>
           
-          <div className="mt-16 text-center relative">
-            <div className="absolute inset-x-0 -top-6 mx-auto w-20 h-20 bg-gradient-to-b from-[#0032b2]/20 to-transparent rounded-full filter blur-xl opacity-70"></div>
+          <div className="mt-20 md:mt-24 relative">
+            {/* Background effects */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute -top-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-[#0032b2]/10 to-[#0050e6]/5 rounded-full filter blur-2xl opacity-60"></div>
+              <div className="absolute top-20 right-1/4 w-40 h-40 bg-gradient-to-bl from-[#0050e6]/5 to-[#0032b2]/10 rounded-full filter blur-3xl opacity-50"></div>
+            </div>
             
-            <Button
-              className="relative bg-gradient-to-r from-[#0032b2] to-[#0050e6] hover:from-[#0050e6] hover:to-[#0032b2] text-white font-medium py-3 px-8 rounded-xl text-lg transition-all duration-500 hover:shadow-[0_0_20px_rgba(0,50,178,0.5)] group overflow-hidden"
-              size="lg"
-            >
-              <span className="relative z-10 flex items-center font-semibold">
-                Try it yourself
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-500 group-hover:translate-x-2" />
-              </span>
+            {/* Live demo section */}
+            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-[#0032b2] to-[#0050e6] p-6 md:p-8 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-opacity-20 bg-white bg-[radial-gradient(rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:12px_12px]"></div>
+                <div className="absolute -bottom-2 -right-12 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 relative">See it in action</h3>
+                <p className="text-white/90 text-lg max-w-2xl relative">
+                  Discover how our AI transforms your business description into a complete website in minutes.
+                </p>
+              </div>
               
-              {/* Animated shine effect */}
-              <span className="absolute top-0 -left-[100%] h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></span>
-              
-              {/* Inner glow */}
-              <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0032b2] blur-md -z-10"></span>
-            </Button>
-            
-            <p className="mt-4 text-gray-500 text-sm animate-pulse">
-              No credit card required • Free domain included
-            </p>
+              {/* Interactive preview */}
+              <div className="p-6 md:p-8 bg-gray-50/50">
+                <div className="flex flex-col md:flex-row gap-8">
+                  <div className="flex-1 space-y-5">
+                    <h4 className="text-xl font-semibold text-gray-800 flex items-center">
+                      <span className="flex items-center justify-center w-7 h-7 bg-[#0032b2] text-white rounded-full mr-2 text-sm">1</span>
+                      Describe your business
+                    </h4>
+                    
+                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4 min-h-[120px] relative">
+                      <p className="text-gray-600 italic">
+                        "I run a coffee shop in Portland that specializes in single-origin beans. 
+                        We also offer baked goods and host community events."
+                      </p>
+                      <div className="text-right mt-2">
+                        <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#0032b2]/10 group cursor-pointer">
+                          <ArrowRight className="h-4 w-4 text-[#0032b2] group-hover:scale-110 transition-transform" />
+                        </span>
+                      </div>
+                      
+                      <div className="absolute -bottom-3 right-3 h-6 w-24 bg-gradient-to-r from-[#0032b2]/10 to-[#0050e6]/20 rounded-full blur-lg"></div>
+                    </div>
+                    
+                    <div className="flex items-center justify-center">
+                      <div className="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium flex items-center animate-pulse">
+                        <span className="h-1.5 w-1.5 rounded-full bg-green-500 mr-1.5"></span>
+                        AI working...
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 space-y-5">
+                    <h4 className="text-xl font-semibold text-gray-800 flex items-center">
+                      <span className="flex items-center justify-center w-7 h-7 bg-[#0032b2] text-white rounded-full mr-2 text-sm">2</span>
+                      Get a complete website
+                    </h4>
+                    
+                    <div className="bg-gray-800 rounded-lg border border-gray-700 shadow-sm overflow-hidden">
+                      <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-600 relative">
+                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-40"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <h3 className="text-white text-3xl font-bold">Portland Brew</h3>
+                        </div>
+                      </div>
+                      <div className="p-4 bg-white">
+                        <div className="flex space-x-3 mb-3">
+                          <div className="h-2 w-12 rounded-full bg-gray-200"></div>
+                          <div className="h-2 w-16 rounded-full bg-gray-200"></div>
+                          <div className="h-2 w-10 rounded-full bg-gray-200"></div>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="h-2 w-full rounded-full bg-gray-100"></div>
+                          <div className="h-2 w-3/4 rounded-full bg-gray-100"></div>
+                          <div className="h-2 w-5/6 rounded-full bg-gray-100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-center">
+                      <span className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
+                        Ready in under 2 minutes
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-10 text-center">
+                  <Button 
+                    className="relative bg-gradient-to-r from-[#0032b2] to-[#0050e6] hover:from-[#0050e6] hover:to-[#0032b2] text-white font-medium py-3 px-8 rounded-xl text-lg transition-all duration-500 hover:shadow-[0_0_20px_rgba(0,50,178,0.5)] group overflow-hidden"
+                    size="lg"
+                  >
+                    <span className="relative z-10 flex items-center font-semibold">
+                      Start building now
+                      <Zap className="ml-2 h-5 w-5 transition-all duration-500 group-hover:rotate-12" />
+                    </span>
+                    
+                    {/* Animated shine effect */}
+                    <span className="absolute top-0 -left-[100%] h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></span>
+                    
+                    {/* Inner glow */}
+                    <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0032b2] blur-md -z-10"></span>
+                  </Button>
+                  
+                  <p className="mt-4 text-gray-500 text-sm">
+                    No credit card required • Free domain included
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
