@@ -1,10 +1,47 @@
-import { Check, Globe, Zap, Shield } from "lucide-react";
+import { Check, Clock, Globe, Code, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function FeaturesSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-10">
+          {/* 2-Minute Creation */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+              <Clock className="h-5 w-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">2-Minute Creation</h3>
+            <p className="text-gray-600 text-sm">
+              From idea to live site in under 2 minutes. No more waiting weeks for your website.
+            </p>
+          </div>
+          
+          {/* Free Domain Included */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+              <Globe className="h-5 w-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">Free Domain Included</h3>
+            <p className="text-gray-600 text-sm">
+              Every website comes with a free domain name. Launch your online presence without additional costs.
+            </p>
+          </div>
+          
+          {/* No Code Required */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+              <Code className="h-5 w-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">No Code Required</h3>
+            <p className="text-gray-600 text-sm">
+              Zero technical skills needed. Our AI handles all the design and development work for you.
+            </p>
+          </div>
+        </div>
+        
+        {/* Second Row of Features */}
+        <div className="grid md:grid-cols-3 gap-10 mt-16">
           {/* Free Domain */}
           <div className="flex">
             <div className="flex-shrink-0 mt-1">
