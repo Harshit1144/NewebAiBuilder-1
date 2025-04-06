@@ -1,4 +1,23 @@
-import { Check, Clock, Globe, Code, Zap, ArrowRight, Layout, Rocket, Sparkles, RefreshCw } from "lucide-react";
+import { 
+  Check, 
+  Clock, 
+  Globe, 
+  Code, 
+  Zap, 
+  ArrowRight, 
+  Layout, 
+  Rocket, 
+  Sparkles, 
+  RefreshCw,
+  AlignLeft,
+  Monitor,
+  Pencil,
+  Upload,
+  Star,
+  Copy,
+  Palette,
+  FileText
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function FeaturesSection() {
@@ -114,114 +133,242 @@ export default function FeaturesSection() {
             </div>
           </div>
           
-          <div className="mt-20 md:mt-24 relative">
-            {/* Background effects */}
+          <div className="mt-20 md:mt-24 relative overflow-hidden">
+            {/* Background gradients */}
             <div className="absolute inset-0 -z-10">
-              <div className="absolute -top-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-[#0032b2]/10 to-[#0050e6]/5 rounded-full filter blur-2xl opacity-60"></div>
-              <div className="absolute top-20 right-1/4 w-40 h-40 bg-gradient-to-bl from-[#0050e6]/5 to-[#0032b2]/10 rounded-full filter blur-3xl opacity-50"></div>
+              <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-tr from-[#0032b2]/10 to-[#0050e6]/5 rounded-full filter blur-3xl opacity-60"></div>
+              <div className="absolute bottom-10 -right-20 w-80 h-80 bg-gradient-to-bl from-[#0050e6]/10 to-[#0032b2]/5 rounded-full filter blur-3xl opacity-60"></div>
             </div>
             
-            {/* Live demo section */}
-            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-[#0032b2] to-[#0050e6] p-6 md:p-8 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-opacity-20 bg-white bg-[radial-gradient(rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:12px_12px]"></div>
-                <div className="absolute -bottom-2 -right-12 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 relative">See it in action</h3>
-                <p className="text-white/90 text-lg max-w-2xl relative">
-                  Discover how our AI transforms your business description into a complete website in minutes.
-                </p>
+            {/* Main title */}
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0032b2] to-[#0050e6]">
+                Try it yourself
+              </h3>
+              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                See how easy it is to create a professional WordPress website with just a simple description.
+              </p>
+            </div>
+            
+            {/* Interactive Builder Container */}
+            <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+              {/* Tabs */}
+              <div className="flex border-b border-gray-200">
+                <div className="flex-1 text-center py-4 font-semibold text-[#0032b2] border-b-2 border-[#0032b2] bg-blue-50/50">
+                  <span className="flex items-center justify-center gap-2 mx-auto w-fit">
+                    <span className="flex items-center justify-center w-6 h-6 bg-[#0032b2] text-white rounded-full text-xs">1</span>
+                    Describe your website
+                  </span>
+                </div>
+                <div className="flex-1 text-center py-4 font-medium text-gray-500">
+                  <span className="flex items-center justify-center gap-2 mx-auto w-fit">
+                    <span className="flex items-center justify-center w-6 h-6 bg-gray-200 text-gray-600 rounded-full text-xs">2</span>
+                    Preview &amp; Publish
+                  </span>
+                </div>
               </div>
               
-              {/* Interactive preview */}
-              <div className="p-6 md:p-8 bg-gray-50/50">
-                <div className="flex flex-col md:flex-row gap-8">
-                  <div className="flex-1 space-y-5">
-                    <h4 className="text-xl font-semibold text-gray-800 flex items-center">
-                      <span className="flex items-center justify-center w-7 h-7 bg-[#0032b2] text-white rounded-full mr-2 text-sm">1</span>
-                      Describe your business
-                    </h4>
+              {/* Main Content Area */}
+              <div className="p-6 md:p-8">
+                <div className="grid gap-8 grid-cols-1 lg:grid-cols-5">
+                  
+                  {/* Left Column - Settings */}
+                  <div className="lg:col-span-2 space-y-8">
                     
-                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4 min-h-[120px] relative">
-                      <p className="text-gray-600 italic">
-                        "I run a coffee shop in Portland that specializes in single-origin beans. 
-                        We also offer baked goods and host community events."
-                      </p>
-                      <div className="text-right mt-2">
-                        <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#0032b2]/10 group cursor-pointer">
-                          <ArrowRight className="h-4 w-4 text-[#0032b2] group-hover:scale-110 transition-transform" />
-                        </span>
+                    {/* Integration Type */}
+                    <div className="space-y-3">
+                      <h4 className="text-lg font-semibold text-gray-800 flex items-center">
+                        <Layout className="h-5 w-5 mr-2 text-[#0032b2]" /> Integration
+                      </h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="border-2 border-[#0032b2] p-3 rounded-lg flex flex-col items-center justify-center bg-blue-50/50 cursor-pointer">
+                          <div className="w-8 h-8 bg-[#0032b2] rounded-full flex items-center justify-center mb-2">
+                            <span className="text-white font-bold text-sm">W</span>
+                          </div>
+                          <span className="text-sm font-medium text-gray-800">WordPress</span>
+                        </div>
+                        
+                        <div className="border border-gray-200 p-3 rounded-lg flex flex-col items-center justify-center text-gray-400 cursor-pointer hover:bg-gray-50 transition-colors">
+                          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+                            <Code className="h-4 w-4 text-gray-400" />
+                          </div>
+                          <span className="text-sm font-medium">Custom</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Description */}
+                    <div className="space-y-3">
+                      <h4 className="text-lg font-semibold text-gray-800 flex items-center">
+                        <AlignLeft className="h-5 w-5 mr-2 text-[#0032b2]" /> Describe what you want
+                      </h4>
+                      <div className="relative">
+                        <div className="absolute top-2 right-2 rounded-md">
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="h-8 px-2 text-xs text-[#0032b2] hover:text-[#0050e6] hover:bg-blue-50"
+                          >
+                            <Copy className="h-3.5 w-3.5 mr-1" /> Copy
+                          </Button>
+                        </div>
+                        <textarea 
+                          className="w-full h-28 p-3 border border-gray-200 rounded-lg text-gray-700 text-sm focus:border-[#0032b2] focus:ring-1 focus:ring-[#0032b2] resize-none transition-all"
+                          defaultValue="I need a professional website for my bakery business with online ordering, photo gallery, and contact form."
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Theme & Color */}
+                    <div className="grid grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-semibold text-gray-700 flex items-center">
+                          <FileText className="h-4 w-4 mr-1.5 text-[#0032b2]" /> Theme
+                        </h4>
+                        <select className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:border-[#0032b2] focus:ring-1 focus:ring-[#0032b2]">
+                          <option>Modern</option>
+                          <option>Classic</option>
+                          <option>Minimalist</option>
+                          <option>Bold</option>
+                        </select>
                       </div>
                       
-                      <div className="absolute -bottom-3 right-3 h-6 w-24 bg-gradient-to-r from-[#0032b2]/10 to-[#0050e6]/20 rounded-full blur-lg"></div>
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-semibold text-gray-700 flex items-center">
+                          <Palette className="h-4 w-4 mr-1.5 text-[#0032b2]" /> Primary Color
+                        </h4>
+                        <div className="flex items-center">
+                          <div className="w-8 h-8 rounded-lg bg-[#3b82f6] mr-2 ring-1 ring-gray-200"></div>
+                          <input
+                            type="text"
+                            className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:border-[#0032b2] focus:ring-1 focus:ring-[#0032b2]"
+                            defaultValue="#3b82f6"
+                          />
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="flex items-center justify-center">
-                      <div className="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium flex items-center animate-pulse">
-                        <span className="h-1.5 w-1.5 rounded-full bg-green-500 mr-1.5"></span>
-                        AI working...
-                      </div>
+                    {/* Button */}
+                    <div>
+                      <Button
+                        className="w-full bg-gradient-to-r from-[#0032b2] to-[#0050e6] hover:from-[#0050e6] hover:to-[#0032b2] text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all py-3 group h-auto"
+                      >
+                        <span className="relative flex items-center justify-center font-semibold text-base">
+                          Generate Website
+                          <Sparkles className="ml-2 h-4 w-4 transition-all duration-500 group-hover:rotate-12" />
+                        </span>
+                      </Button>
+                      
+                      <p className="mt-4 text-gray-500 text-xs text-center">
+                        No credit card required. Your website will be ready in less than 2 minutes.
+                      </p>
                     </div>
                   </div>
                   
-                  <div className="flex-1 space-y-5">
-                    <h4 className="text-xl font-semibold text-gray-800 flex items-center">
-                      <span className="flex items-center justify-center w-7 h-7 bg-[#0032b2] text-white rounded-full mr-2 text-sm">2</span>
-                      Get a complete website
+                  {/* Right Column - Website Preview */}
+                  <div className="lg:col-span-3 space-y-3">
+                    <h4 className="text-lg font-semibold text-gray-800 flex items-center">
+                      <Monitor className="h-5 w-5 mr-2 text-[#0032b2]" /> Website Preview
                     </h4>
                     
-                    <div className="bg-gray-800 rounded-lg border border-gray-700 shadow-sm overflow-hidden">
-                      <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-600 relative">
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-40"></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <h3 className="text-white text-3xl font-bold">Portland Brew</h3>
+                    <div className="rounded-lg border border-gray-200 shadow-md overflow-hidden relative bg-white min-h-[400px] flex items-center justify-center group">
+                      
+                      {/* Display mock browser frame */}
+                      <div className="w-full max-w-md mx-auto overflow-hidden relative">
+                        {/* Browser top bar */}
+                        <div className="bg-gray-100 border-b border-gray-200 p-2 flex items-center space-x-2">
+                          <div className="flex space-x-1.5">
+                            <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                            <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                          </div>
+                          <div className="flex-1 bg-white px-2 py-1 rounded text-xs text-gray-500 text-center">
+                            sweetbakery.com
+                          </div>
+                        </div>
+                        
+                        {/* Mock website */}
+                        <div className="relative">
+                          {/* Hero section */}
+                          <div className="h-40 bg-[#3b82f6] relative">
+                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-50"></div>
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                              <h2 className="text-2xl font-bold mb-2">Sweet Bakery</h2>
+                              <p className="text-sm">Artisanal baked goods since 2005</p>
+                              <button className="mt-4 bg-white text-[#3b82f6] font-medium py-1 px-4 rounded-lg text-sm shadow-md">
+                                Order Now
+                              </button>
+                            </div>
+                          </div>
+                          
+                          {/* Content section */}
+                          <div className="p-4 bg-white">
+                            <div className="flex items-center justify-center space-x-3 pb-3 border-b border-gray-100">
+                              <div className="h-1.5 w-16 rounded-full bg-gray-200"></div>
+                              <div className="h-1.5 w-16 rounded-full bg-gray-200"></div>
+                              <div className="h-1.5 w-16 rounded-full bg-gray-200"></div>
+                            </div>
+                            
+                            {/* Product grid */}
+                            <div className="mt-4 grid grid-cols-2 gap-2">
+                              <div className="bg-gray-100 rounded-lg h-20"></div>
+                              <div className="bg-gray-100 rounded-lg h-20"></div>
+                              <div className="bg-gray-100 rounded-lg h-20"></div>
+                              <div className="bg-gray-100 rounded-lg h-20"></div>
+                            </div>
+                            
+                            {/* Text content */}
+                            <div className="mt-4 space-y-2">
+                              <div className="h-2 w-full rounded-full bg-gray-100"></div>
+                              <div className="h-2 w-5/6 rounded-full bg-gray-100"></div>
+                              <div className="h-2 w-4/6 rounded-full bg-gray-100"></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div className="p-4 bg-white">
-                        <div className="flex space-x-3 mb-3">
-                          <div className="h-2 w-12 rounded-full bg-gray-200"></div>
-                          <div className="h-2 w-16 rounded-full bg-gray-200"></div>
-                          <div className="h-2 w-10 rounded-full bg-gray-200"></div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="h-2 w-full rounded-full bg-gray-100"></div>
-                          <div className="h-2 w-3/4 rounded-full bg-gray-100"></div>
-                          <div className="h-2 w-5/6 rounded-full bg-gray-100"></div>
+                      
+                      {/* Hover overlay with buttons */}
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex space-x-4">
+                          <Button variant="default" className="bg-white text-gray-800 hover:bg-gray-100">
+                            <Pencil className="mr-1.5 h-4 w-4" /> Edit
+                          </Button>
+                          <Button className="bg-[#0032b2]">
+                            <Upload className="mr-1.5 h-4 w-4" /> Publish
+                          </Button>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="flex justify-center">
-                      <span className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
-                        Ready in under 2 minutes
-                      </span>
+                    {/* Progress bar */}
+                    <div className="flex items-center space-x-4">
+                      <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-[#0032b2] to-[#0050e6] rounded-full" style={{ width: "75%" }}></div>
+                      </div>
+                      <span className="text-xs font-medium text-gray-500">75% Complete</span>
                     </div>
                   </div>
                 </div>
-                
-                <div className="mt-10 text-center">
-                  <Button 
-                    className="relative bg-gradient-to-r from-[#0032b2] to-[#0050e6] hover:from-[#0050e6] hover:to-[#0032b2] text-white font-medium py-3 px-8 rounded-xl text-lg transition-all duration-500 hover:shadow-[0_0_20px_rgba(0,50,178,0.5)] group overflow-hidden"
-                    size="lg"
-                  >
-                    <span className="relative z-10 flex items-center font-semibold">
-                      Start building now
-                      <Zap className="ml-2 h-5 w-5 transition-all duration-500 group-hover:rotate-12" />
-                    </span>
-                    
-                    {/* Animated shine effect */}
-                    <span className="absolute top-0 -left-[100%] h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></span>
-                    
-                    {/* Inner glow */}
-                    <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0032b2] blur-md -z-10"></span>
-                  </Button>
-                  
-                  <p className="mt-4 text-gray-500 text-sm">
-                    No credit card required • Free domain included
-                  </p>
+              </div>
+            </div>
+            
+            {/* Testimonial or social proof */}
+            <div className="max-w-3xl mx-auto mt-10 text-center">
+              <div className="flex items-center justify-center mb-3">
+                <div className="flex -space-x-2">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" className="w-8 h-8 rounded-full border-2 border-white" alt="User" />
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" className="w-8 h-8 rounded-full border-2 border-white" alt="User" />
+                  <img src="https://randomuser.me/api/portraits/men/21.jpg" className="w-8 h-8 rounded-full border-2 border-white" alt="User" />
+                </div>
+                <div className="ml-2 flex">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                  ))}
                 </div>
               </div>
+              <p className="text-gray-600 text-sm italic">
+                "I created a professional website for my business in under 2 minutes. The AI understood exactly what I needed!"
+              </p>
             </div>
           </div>
         </div>
