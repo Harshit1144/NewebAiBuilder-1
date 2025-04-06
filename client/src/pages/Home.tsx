@@ -5,6 +5,9 @@ import HowItWorks from "@/components/HowItWorks";
 import PowerfulFeatures from "@/components/PowerfulFeatures";
 import Pricing from "@/components/Pricing";
 import BuiltInFeatures from "@/components/BuiltInFeatures";
+import AICapabilities from "@/components/AICapabilities";
+import TechInfrastructure from "@/components/TechInfrastructure";
+import CompetitorComparison from "@/components/CompetitorComparison";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -14,11 +17,14 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <AICapabilities />
         <Features />
-        <HowItWorks />
+        <TechInfrastructure />
         <PowerfulFeatures />
-        <Pricing />
+        <HowItWorks />
         <BuiltInFeatures />
+        <CompetitorComparison />
+        <Pricing />
         <CTA />
       </main>
       <Footer />
