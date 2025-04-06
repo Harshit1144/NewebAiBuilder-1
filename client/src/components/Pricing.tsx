@@ -3,34 +3,33 @@ import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-// Define pricing plans
-const plans = {
+// Define types for plans
+type PricingPlan = {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  link: string;
+  popular: boolean;
+  period?: string;
+  savings?: string;
+};
+
+// Define simplified pricing plans
+const plans: Record<'monthly' | 'yearly', PricingPlan[]> = {
   monthly: [
     {
       name: "Starter",
       price: "$8",
       period: "month",
+      description: "Perfect for individuals starting their online presence",
       features: [
-        {
-          title: "Free Domain",
-          description: "Enjoy a free domain for 1 year, applicable to .com, .org, and more with Neweb.ai!"
-        },
-        {
-          title: "1 Website",
-          description: "Build and host 1 stunning website effortlessly with Neweb.ai!"
-        },
-        {
-          title: "Free SSL Certificate",
-          description: "Secure your website with a free SSL certificate included with Neweb.ai!"
-        },
-        {
-          title: "Email Support",
-          description: "Get dedicated email support to assist you every step of the way with Neweb.ai!"
-        },
-        {
-          title: "SEO Tools Suite",
-          description: "Optimize your website's visibility with Neweb.ai's powerful SEO Tools Suite!"
-        }
+        "1 Website",
+        "Free domain for 1 year (.com, .org, etc.)",
+        "SSL certificate included",
+        "AI-powered site builder",
+        "Basic SEO tools",
+        "Email support"
       ],
       link: "https://app.neweb.ai/Billing",
       popular: false
@@ -39,52 +38,32 @@ const plans = {
       name: "Elite",
       price: "$16",
       period: "month",
+      description: "Ideal for businesses needing multiple websites",
       features: [
-        {
-          title: "Free Domain",
-          description: "Enjoy a free domain for 1 year, applicable to .com, .org, and more with Neweb.ai!"
-        },
-        {
-          title: "5 Websites",
-          description: "Build and host 5 stunning websites effortlessly with Neweb.ai!"
-        },
-        {
-          title: "Free SSL Certificate",
-          description: "Secure your website with a free SSL certificate included with Neweb.ai!"
-        },
-        {
-          title: "24*7 Live chat support",
-          description: "Access 24/7 live chat support to resolve your queries anytime with Neweb.ai!"
-        },
-        {
-          title: "Priority SEO Optimization",
-          description: "Enhance your online presence with Neweb.ai's Priority SEO Optimization services!"
-        }
+        "5 Websites",
+        "Free domain for 1 year",
+        "SSL certificates included",
+        "Advanced AI site builder",
+        "Priority SEO optimization",
+        "24/7 live chat support",
+        "Custom design templates",
+        "Analytics dashboard"
       ],
       link: "https://app.neweb.ai/Billing",
       popular: true
     },
     {
       name: "Agency",
-      price: "$Custom",
-      period: "",
+      price: "Custom",
+      description: "For agencies managing multiple client websites",
       features: [
-        {
-          title: "Everything in Starter and Elite",
-          description: "Enjoy all features from the Starter and Elite plans combined with Neweb.ai!"
-        },
-        {
-          title: "Unlimited Websites",
-          description: "Create and manage unlimited websites seamlessly with Neweb.ai"
-        },
-        {
-          title: "Agency-specific Tools",
-          description: "Access exclusive agency-specific tools to streamline your workflow with Neweb.ai!"
-        },
-        {
-          title: "Priority 24/7 Support",
-          description: "Get priority 24/7 support for faster resolutions with Neweb.ai!"
-        }
+        "Unlimited websites",
+        "Everything in Elite plan",
+        "White-label solutions",
+        "Agency dashboard",
+        "Client management tools",
+        "Priority dedicated support",
+        "API access"
       ],
       link: "https://app.neweb.ai/Billing",
       popular: false
@@ -95,27 +74,14 @@ const plans = {
       name: "Starter",
       price: "$89",
       period: "year",
+      description: "Perfect for individuals starting their online presence",
       features: [
-        {
-          title: "Free Domain",
-          description: "Enjoy a free domain for 1 year, applicable to .com, .org, and more with Neweb.ai!"
-        },
-        {
-          title: "1 Website",
-          description: "Build and host 1 stunning website effortlessly with Neweb.ai!"
-        },
-        {
-          title: "Free SSL Certificate",
-          description: "Secure your website with a free SSL certificate included with Neweb.ai!"
-        },
-        {
-          title: "Email Support",
-          description: "Get dedicated email support to assist you every step of the way with Neweb.ai!"
-        },
-        {
-          title: "SEO Tools Suite",
-          description: "Optimize your website's visibility with Neweb.ai's powerful SEO Tools Suite!"
-        }
+        "1 Website",
+        "Free domain for 1 year (.com, .org, etc.)",
+        "SSL certificate included",
+        "AI-powered site builder",
+        "Basic SEO tools",
+        "Email support"
       ],
       link: "https://app.neweb.ai/Billing",
       popular: false,
@@ -125,27 +91,16 @@ const plans = {
       name: "Elite",
       price: "$168",
       period: "year",
+      description: "Ideal for businesses needing multiple websites",
       features: [
-        {
-          title: "Free Domain",
-          description: "Enjoy a free domain for 1 year, applicable to .com, .org, and more with Neweb.ai!"
-        },
-        {
-          title: "5 Websites",
-          description: "Build and host 5 stunning websites effortlessly with Neweb.ai!"
-        },
-        {
-          title: "Free SSL Certificate",
-          description: "Secure your website with a free SSL certificate included with Neweb.ai!"
-        },
-        {
-          title: "24*7 Live chat support",
-          description: "Access 24/7 live chat support to resolve your queries anytime with Neweb.ai!"
-        },
-        {
-          title: "Priority SEO Optimization",
-          description: "Enhance your online presence with Neweb.ai's Priority SEO Optimization services!"
-        }
+        "5 Websites",
+        "Free domain for 1 year",
+        "SSL certificates included",
+        "Advanced AI site builder",
+        "Priority SEO optimization",
+        "24/7 live chat support",
+        "Custom design templates",
+        "Analytics dashboard"
       ],
       link: "https://app.neweb.ai/Billing",
       popular: true,
@@ -153,25 +108,16 @@ const plans = {
     },
     {
       name: "Agency",
-      price: "$Custom",
-      period: "",
+      price: "Custom",
+      description: "For agencies managing multiple client websites",
       features: [
-        {
-          title: "Everything in Starter and Elite",
-          description: "Enjoy all features from the Starter and Elite plans combined with Neweb.ai!"
-        },
-        {
-          title: "Unlimited Websites",
-          description: "Create and manage unlimited websites seamlessly with Neweb.ai"
-        },
-        {
-          title: "Agency-specific Tools",
-          description: "Access exclusive agency-specific tools to streamline your workflow with Neweb.ai!"
-        },
-        {
-          title: "Priority 24/7 Support",
-          description: "Get priority 24/7 support for faster resolutions with Neweb.ai!"
-        }
+        "Unlimited websites",
+        "Everything in Elite plan",
+        "White-label solutions",
+        "Agency dashboard",
+        "Client management tools",
+        "Priority dedicated support",
+        "API access"
       ],
       link: "https://app.neweb.ai/Billing",
       popular: false
@@ -183,92 +129,97 @@ export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly");
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <h6 className="text-primary font-semibold text-sm uppercase mb-2">Flexible Pricing</h6>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose a pricing plan that works for you</h2>
-          <p className="text-gray-600 text-lg">
-            Whether you're an individual, a small team, or a growing enterprise, we have a plan that aligns perfectly with your goals.
+          <h2 className="text-3xl font-bold mb-4">Simple, transparent pricing</h2>
+          <p className="text-gray-600 text-lg mb-8">
+            Choose the plan that works best for your needs. All plans include our core features.
           </p>
           
           {/* Toggle Switch */}
-          <div className="flex items-center justify-center mt-8">
+          <div className="inline-flex items-center bg-gray-100 rounded-lg p-1">
             <button 
               onClick={() => setBillingPeriod("monthly")}
-              className={`px-6 py-2 font-medium rounded-l-lg transition-colors ${
+              className={`px-5 py-2 text-sm font-medium rounded-md transition-all ${
                 billingPeriod === "monthly" 
-                  ? "bg-primary text-white" 
-                  : "bg-gray-200 text-gray-700"
+                  ? "bg-white text-gray-900 shadow-sm" 
+                  : "text-gray-700 hover:text-gray-900"
               }`}
             >
               Monthly
             </button>
             <button 
               onClick={() => setBillingPeriod("yearly")}
-              className={`px-6 py-2 font-medium rounded-r-lg transition-colors ${
+              className={`px-5 py-2 text-sm font-medium rounded-md transition-all ${
                 billingPeriod === "yearly" 
-                  ? "bg-primary text-white" 
-                  : "bg-gray-200 text-gray-700"
+                  ? "bg-white text-gray-900 shadow-sm" 
+                  : "text-gray-700 hover:text-gray-900"
               }`}
             >
               Yearly
+              {billingPeriod === "yearly" ? null : (
+                <span className="ml-1 text-xs text-green-600 font-normal">Save up to 16%</span>
+              )}
             </button>
           </div>
         </motion.div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {plans[billingPeriod].map((plan, index) => (
             <motion.div 
               key={plan.name}
-              className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-xl ${
+              className={`bg-white rounded-lg border ${
                 plan.popular 
-                  ? "border-2 border-primary transform md:-translate-y-4" 
-                  : "border border-gray-200"
-              }`}
+                  ? "border-primary ring-1 ring-primary shadow-lg" 
+                  : "border-gray-200 hover:border-gray-300"
+              } transition-all`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              {plan.popular && (
-                <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
-                  MOST POPULAR
-                </div>
-              )}
-              <div className="p-8 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-500 mb-2">{plan.name}</h3>
-                <div className="flex items-end">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.period && <span className="text-gray-500 ml-1">/{plan.period}</span>}
+              <div className="p-6 border-b border-gray-100">
+                {plan.popular && (
+                  <div className="inline-block bg-primary/10 text-primary text-xs font-medium px-2 py-1 rounded-full mb-3">
+                    MOST POPULAR
+                  </div>
+                )}
+                <h3 className="text-lg font-semibold text-gray-900">{plan.name}</h3>
+                <p className="text-sm text-gray-500 mt-1 mb-4">{plan.description}</p>
+                <div className="flex items-baseline mb-1">
+                  <span className="text-3xl font-bold">{plan.price}</span>
+                  {plan.period && <span className="text-gray-500 ml-1 text-sm">/{plan.period}</span>}
                 </div>
                 {plan.savings && (
-                  <div className="mt-2 inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">
+                  <div className="text-green-600 text-sm font-medium">
                     {plan.savings}
                   </div>
                 )}
               </div>
-              <div className="p-8">
-                <ul className="space-y-4">
+              <div className="p-6">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <Check className="text-green-500 h-5 w-5 mt-1 mr-3 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium">{feature.title}</span>
-                        <p className="text-sm text-gray-500">{feature.description}</p>
-                      </div>
+                      <Check className="text-primary h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Button
                   asChild
-                  className="mt-8 w-full bg-primary hover:bg-primary/90 text-white"
+                  variant={plan.popular ? "default" : "outline"}
+                  className={`w-full ${
+                    plan.popular 
+                      ? "bg-primary hover:bg-primary/90 text-white" 
+                      : "border-gray-300 text-gray-900"
+                  }`}
                 >
                   <a href={plan.link}>
                     Get started
@@ -278,6 +229,18 @@ export default function Pricing() {
             </motion.div>
           ))}
         </div>
+        
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <p className="text-gray-600 text-sm">
+            Need a custom solution? <a href="#" className="text-primary font-medium">Contact us</a> for enterprise pricing.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,98 +1,144 @@
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { Globe, Server, Search, Shield } from "lucide-react";
-
-const features = [
-  {
-    icon: <Globe className="text-white text-5xl" />,
-    bgClass: "from-primary to-primary/70",
-    category: "Instant Domain",
-    title: "Free Domain For 1st Year",
-    description: "With each neweb.ai plan you get free domain for the 1st year.",
-    link: "https://app.neweb.ai/",
-    linkText: "Start Now",
-    textColor: "text-primary"
-  },
-  {
-    icon: <Server className="text-white text-5xl" />,
-    bgClass: "from-indigo-500 to-indigo-700",
-    category: "Powered by Grade A Server",
-    title: "High Speed Hosting Included",
-    description: "With all the neweb.ai plan we provide high speed web hosting so that your website loads the best when needed.",
-    link: "https://app.neweb.ai/",
-    linkText: "Get Started",
-    textColor: "text-indigo-600"
-  },
-  {
-    icon: <Search className="text-white text-5xl" />,
-    bgClass: "from-orange-500 to-orange-700",
-    category: "SEO and Website Management",
-    title: "Rank Higher With AI SEO",
-    description: "Let AI take care of your SEO and website management needs ultimately making you rank higher.",
-    link: "https://app.neweb.ai/",
-    linkText: "Get Started",
-    textColor: "text-orange-600"
-  },
-  {
-    icon: <Shield className="text-white text-5xl" />,
-    bgClass: "from-primary to-indigo-700",
-    category: "Secure & Fast",
-    title: "SSL and Security Measures Inbuilt",
-    description: "Neweb.ai provides direct SSL and takes care of all the security measures to get you the best security possible.",
-    link: "https://app.neweb.ai/",
-    linkText: "Get Started",
-    textColor: "text-primary"
-  }
-];
 
 export default function PowerfulFeatures() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="grid lg:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <h6 className="text-primary font-semibold text-sm uppercase mb-2">Powerful Features</h6>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Make things easy for your business</h2>
-          <p className="text-gray-600 text-lg">
-            With concepts in hand, we meticulously design, refining every detail to align with your vision and objectives.
-          </p>
-        </motion.div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
+          <div>
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold mb-4">Make website building effortless</h2>
+              <p className="text-gray-600 text-lg">
+                Create, manage, and scale your website with our AI-powered WordPress platform.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              <motion.div 
+                className="flex gap-4"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <div className="flex-shrink-0 bg-primary/10 rounded-lg p-3 h-fit">
+                  <Globe className="text-primary h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">Free domain for the first year</h3>
+                  <p className="text-gray-600">
+                    Every Neweb.ai plan includes a free domain for your first year, 
+                    getting your business online with no additional costs.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex gap-4"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="flex-shrink-0 bg-primary/10 rounded-lg p-3 h-fit">
+                  <Server className="text-primary h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">High-speed managed hosting</h3>
+                  <p className="text-gray-600">
+                    Our reliable, lightning-fast hosting ensures your website loads quickly 
+                    and performs optimally, with no technical expertise required.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex gap-4"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="flex-shrink-0 bg-primary/10 rounded-lg p-3 h-fit">
+                  <Search className="text-primary h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">AI-powered SEO tools</h3>
+                  <p className="text-gray-600">
+                    Let our AI optimize your content for search engines automatically, 
+                    improving your visibility and helping you rank higher.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex gap-4"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="flex-shrink-0 bg-primary/10 rounded-lg p-3 h-fit">
+                  <Shield className="text-primary h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">Built-in security features</h3>
+                  <p className="text-gray-600">
+                    SSL certificates and comprehensive security measures come standard, 
+                    protecting your site and your visitors' data.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+            
             <motion.div 
-              key={index}
-              className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="mt-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <div className={`h-40 bg-gradient-to-br ${feature.bgClass} flex items-center justify-center`}>
-                {feature.icon}
-              </div>
-              <div className="p-6">
-                <h6 className={`text-sm ${feature.textColor} font-semibold uppercase mb-1`}>{feature.category}</h6>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600 mb-4">{feature.description}</p>
-                <Button asChild variant="link" className={`${feature.textColor} font-medium p-0`}>
-                  <a href={feature.link} className="flex items-center">
-                    {feature.linkText}
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </Button>
-              </div>
+              <Button
+                asChild
+                className="bg-primary hover:bg-primary/90 text-white"
+              >
+                <a href="https://app.neweb.ai/">Start building now →</a>
+              </Button>
             </motion.div>
-          ))}
-        </div>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="rounded-lg shadow-lg overflow-hidden border border-gray-200 bg-white">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                alt="Website Dashboard" 
+                className="w-full"
+              />
+            </div>
+            
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
+              <img 
+                src="https://neweb.ai/wp-content/uploads/2023/10/ai-logo.svg" 
+                alt="Neweb.ai Logo" 
+                className="w-20 mx-auto mb-4"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

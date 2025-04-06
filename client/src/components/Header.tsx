@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -42,53 +41,50 @@ export default function Header() {
       className="fixed w-full z-50 backdrop-blur-sm"
       style={{ backgroundColor, boxShadow }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <Link href="/">
-            <a className="flex items-center space-x-2">
-              <img
-                src="https://neweb.ai/wp-content/uploads/2023/10/ai-logo.svg"
-                alt="Neweb.ai Logo"
-                className="h-8"
-              />
-              <span className="text-xl font-bold text-primary">neweb.ai</span>
-            </a>
-          </Link>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center">
+            <img
+              src="https://neweb.ai/wp-content/uploads/2023/10/ai-logo.svg"
+              alt="Neweb.ai Logo"
+              className="h-8 w-auto"
+            />
+            <span className="ml-2 text-xl font-semibold">neweb.ai</span>
+          </div>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <a
               href="#features"
-              className="text-gray-600 hover:text-primary font-medium transition-colors"
+              className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
             >
               Features
             </a>
             <a
               href="#how-it-works"
-              className="text-gray-600 hover:text-primary font-medium transition-colors"
+              className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
             >
               How it Works
             </a>
             <a
               href="#pricing"
-              className="text-gray-600 hover:text-primary font-medium transition-colors"
+              className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
             >
               Pricing
             </a>
-            <div className="flex items-center space-x-3">
-              <a
-                href="https://app.neweb.ai/"
-                className="text-primary font-semibold hover:text-primary/90 transition-colors"
-              >
-                Log In
-              </a>
-              <Button 
-                asChild
-                className="bg-primary hover:bg-primary/90 text-white"
-              >
-                <a href="https://app.neweb.ai/">Start Now</a>
-              </Button>
-            </div>
+            <a
+              href="https://app.neweb.ai/"
+              className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
+            >
+              Log In
+            </a>
+            <Button 
+              asChild
+              className="bg-primary hover:bg-primary/90 text-white ml-2"
+              size="sm"
+            >
+              <a href="https://app.neweb.ai/">Start Building →</a>
+            </Button>
           </nav>
 
           {/* Mobile menu button */}
@@ -97,7 +93,7 @@ export default function Header() {
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
@@ -113,37 +109,39 @@ export default function Header() {
             <div className="px-2 pt-2 pb-4 space-y-1 bg-white rounded-md shadow-lg">
               <a
                 href="#features"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
                 onClick={closeMobileMenu}
               >
                 Features
               </a>
               <a
                 href="#how-it-works"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
                 onClick={closeMobileMenu}
               >
                 How it Works
               </a>
               <a
                 href="#pricing"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
                 onClick={closeMobileMenu}
               >
                 Pricing
               </a>
-              <div className="flex flex-col space-y-2 mt-3 px-3">
-                <a
-                  href="https://app.neweb.ai/"
-                  className="text-primary font-semibold hover:text-primary/90 transition-colors"
-                >
-                  Log In
-                </a>
+              <a
+                href="https://app.neweb.ai/"
+                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                onClick={closeMobileMenu}
+              >
+                Log In
+              </a>
+              <div className="mt-3 px-3">
                 <Button
                   asChild
                   className="bg-primary hover:bg-primary/90 text-white w-full text-center"
+                  size="sm"
                 >
-                  <a href="https://app.neweb.ai/">Start Now</a>
+                  <a href="https://app.neweb.ai/">Start Building →</a>
                 </Button>
               </div>
             </div>

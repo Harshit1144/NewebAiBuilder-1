@@ -1,133 +1,122 @@
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Check, Wand2, Palette, Rocket } from "lucide-react";
+import { Check, Wand2, Palette, Rocket, Server, Settings, Shield } from "lucide-react";
 import { FaWordpress } from "react-icons/fa";
 
 export default function Features() {
+  const features = [
+    {
+      icon: <Wand2 className="h-5 w-5 text-primary" />,
+      title: "AI Content Generation",
+      description: "Create complete websites simply by describing what you want. Our AI crafts tailored content, designs, and images."
+    },
+    {
+      icon: <FaWordpress className="h-5 w-5 text-primary" />,
+      title: "WordPress Integration",
+      description: "Seamlessly integrate with WordPress. Build and deploy your site with all the power of WordPress behind it."
+    },
+    {
+      icon: <Palette className="h-5 w-5 text-primary" />,
+      title: "Custom Designs",
+      description: "Choose from hundreds of professionally designed templates or create your own unique design."
+    },
+    {
+      icon: <Server className="h-5 w-5 text-primary" />,
+      title: "Managed Hosting",
+      description: "Worry-free high-performance hosting included with every site. Focus on your content, not server management."
+    },
+    {
+      icon: <Shield className="h-5 w-5 text-primary" />,
+      title: "Security & Maintenance",
+      description: "Automatic updates, backups, and security monitoring keep your site safe and running smoothly."
+    },
+    {
+      icon: <Settings className="h-5 w-5 text-primary" />,
+      title: "Advanced SEO Tools",
+      description: "Built-in tools to help your site rank higher in search results and attract more visitors."
+    }
+  ];
+
   return (
-    <section id="features" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center max-w-3xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Build your flawless website</h2>
+          <h2 className="text-3xl font-bold mb-4">Key features that set us apart</h2>
           <p className="text-gray-600 text-lg">
-            We combine everything required to build websites. This allows you to reach more customers, save time and money, and boost sales.
+            Create professional WordPress websites in minutes with our intuitive AI-powered platform.
           </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Feature 1 */}
-          <motion.div 
-            className="feature-card bg-white rounded-xl shadow-lg p-8 border border-gray-100"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="bg-blue-100 rounded-xl p-4 inline-block mb-6">
-              <Wand2 className="h-6 w-6 text-primary" />
+          {features.map((feature, index) => (
+            <motion.div 
+              key={index}
+              className="feature-card rounded-lg p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="flex items-center mb-4">
+                <div className="bg-primary/10 rounded-lg p-3 mr-3">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-semibold">{feature.title}</h3>
+              </div>
+              <p className="text-gray-600">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+        
+        <motion.div 
+          className="mt-20 bg-gray-50 rounded-xl p-8 border border-gray-100"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">
+                Pixel-perfect UIs, embedded in minutes
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Simply select your preferred design, customize it with your content, and let Neweb.ai handle the rest. Our platform ensures your WordPress site looks exactly as designed.
+              </p>
+              <div className="font-mono text-sm bg-gray-900 text-gray-200 p-4 rounded-md mb-6">
+                <code>&lt;SignIn/&gt; &lt;SignUp/&gt; &lt;UserButton/&gt; &lt;UserProfile/&gt;</code>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <Check className="text-primary h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
+                  <span className="text-gray-700">Complete user management functionality</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
+                  <span className="text-gray-700">Match to your brand with complete customization</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary h-5 w-5 mt-0.5 mr-2 flex-shrink-0" />
+                  <span className="text-gray-700">Deploy to your own domain—no more jarring redirects</span>
+                </li>
+              </ul>
             </div>
-            <h6 className="text-sm text-primary font-semibold uppercase mb-2">Site Builder</h6>
-            <h3 className="text-xl font-bold mb-4">Effortlessly Build a Complete Website with Just Text</h3>
-            <p className="text-gray-600 mb-6">Our powerful features can streamline your website-building process.</p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start">
-                <Check className="text-primary h-5 w-5 mt-1 mr-2 flex-shrink-0" />
-                <span>Create a professional website, no coding needed.</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="text-primary h-5 w-5 mt-1 mr-2 flex-shrink-0" />
-                <span>Boost conversions with AI-driven optimization.</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="text-primary h-5 w-5 mt-1 mr-2 flex-shrink-0" />
-                <span>24/7 support whenever you need it.</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="text-primary h-5 w-5 mt-1 mr-2 flex-shrink-0" />
-                <span>Tailor your website to fit your unique business goals.</span>
-              </li>
-            </ul>
-            <Button asChild variant="link" className="text-primary font-medium p-0">
-              <a href="https://app.neweb.ai/" className="flex items-center">
-                Get Started 
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </Button>
-          </motion.div>
-          
-          {/* Feature 2 */}
-          <motion.div 
-            className="feature-card bg-white rounded-xl shadow-lg p-8 border border-gray-100"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="bg-indigo-100 rounded-xl p-4 inline-block mb-6">
-              <Palette className="h-6 w-6 text-indigo-600" />
-            </div>
-            <h6 className="text-sm text-indigo-600 font-semibold uppercase mb-2">Website Customization</h6>
-            <h3 className="text-xl font-bold mb-4">Your digital playground</h3>
-            <p className="text-gray-600 mb-6">Easily customize every part of your website with our simple tools to build a unique online presence.</p>
-            <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Website Customization Interface" 
-                className="rounded-lg w-full h-48 object-cover"
-              />
-            </div>
-            <Button asChild variant="link" className="text-indigo-600 font-medium p-0">
-              <a href="https://app.neweb.ai/" className="flex items-center">
-                Explore Tools
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </Button>
-          </motion.div>
-          
-          {/* Feature 3 */}
-          <motion.div 
-            className="feature-card bg-white rounded-xl shadow-lg p-8 border border-gray-100"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="bg-orange-100 rounded-xl p-4 inline-block mb-6">
-              <FaWordpress className="h-6 w-6 text-orange-600" />
-            </div>
-            <h6 className="text-sm text-orange-600 font-semibold uppercase mb-2">Reliable</h6>
-            <h3 className="text-xl font-bold mb-4">Powered by WordPress</h3>
-            <p className="text-gray-600 mb-6">Generate captivating content and images quickly, all in one intuitive platform.</p>
-            <div className="bg-gray-50 p-4 rounded-lg mb-6">
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
               <img 
                 src="https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="WordPress Platform" 
-                className="rounded-lg w-full h-48 object-cover"
+                className="rounded-lg w-full object-cover"
               />
             </div>
-            <Button asChild variant="link" className="text-orange-600 font-medium p-0">
-              <a href="https://app.neweb.ai/" className="flex items-center">
-                Learn More
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
